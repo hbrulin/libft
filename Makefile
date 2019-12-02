@@ -36,7 +36,6 @@ $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
 	@echo "$(NAME) created"
 	@ranlib $(NAME)
-	@echo $(NAME) > .gitignore
 	@echo "$(NAME) indexed"
 	
 $(BUILD_DIR)/%.o: %.c Makefile
