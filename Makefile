@@ -6,7 +6,7 @@
 #    By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 15:50:08 by hbrulin           #+#    #+#              #
-#    Updated: 2019/12/02 18:10:30 by hbrulin          ###   ########.fr        #
+#    Updated: 2019/12/03 14:08:44 by hbrulin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,9 @@ OBJS = $(SRCS:.c=.o)
 OBJ = $(addprefix $(BUILD_DIR)/,$(OBJS))
 DPD = $(OBJ:.o=.d)
 
+opti :
+	@make -j all
+
 all : $(NAME)
 
 $(NAME): $(OBJ)
@@ -50,7 +53,9 @@ fclean: clean
 	@/bin/rm -f $(NAME)
 	@echo "Lib deleted"
 
-re : fclean all
+re :
+	@make fclean
+	@make opti
 
 .PHONY: all, clean, fclean, re
 
