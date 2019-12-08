@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 12:27:14 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/12/02 14:49:39 by hbrulin          ###   ########.fr       */
+/*   Updated: 2019/12/08 10:34:29 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void				ft_putstr(char *str);
 char				*aff_hex(unsigned long value);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strnew(size_t size);
+void				ft_tabdel(void **tab);
 
 #endif
