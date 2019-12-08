@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 17:51:30 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/11/11 11:39:17 by hbrulin          ###   ########.fr       */
+/*   Updated: 2019/12/08 14:30:40 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *tmp;
 
-	tmp = (t_list *)malloc(sizeof(t_list));
+	if (!(tmp = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
 	if (tmp)
 	{
 		tmp->content = content;
