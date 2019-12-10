@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/11 12:27:14 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/12/08 11:09:53 by hbrulin          ###   ########.fr       */
+/*   Updated: 2019/12/10 10:57:58 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdarg.h>
+
+# define BUFFER_SIZE 2048
 
 typedef	struct		s_list
 {
@@ -76,5 +78,6 @@ char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strnew(size_t size);
 void				ft_tabdel(void **tab);
 char				*ft_uitoa(unsigned int n);
+int					get_next_line(int fd, char **line);
 
 #endif
