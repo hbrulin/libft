@@ -6,44 +6,44 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 18:47:15 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/11/12 12:12:19 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/07 08:15:04 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_fill_char(int n, char *s, int i)
+char	*ft_fill_char(int size, int n, char *ret)
 {
-	int		tmp;
+	int tmp;
 
-	i--;
+	size--;
 	if (n < 0)
 	{
 		tmp = -n;
-		s[0] = '-';
+		ret[0] = '-';
 	}
 	else
 		tmp = n;
 	if (tmp >= 10)
 	{
-		ft_fill_char((tmp / 10), s, i);
-		s[i] = ((tmp % 10) + '0');
+		ft_fill_char(size, tmp / 10, ret);
+		ret[size] = tmp % 10 + '0';
 	}
 	else
-		s[i] = (tmp + '0');
-	return (s);
+		ret[size] = tmp + '0';
+	return (ret);
 }
 
 int		ft_size(int n)
 {
-	int		size;
-	int		tmp;
+	int tmp;
+	int size;
 
 	size = 0;
 	if (n < 0)
 	{
-		tmp = -n;
 		size++;
+		tmp = -n;
 	}
 	else
 		tmp = n;
@@ -57,29 +57,14 @@ int		ft_size(int n)
 
 char	*ft_itoa(int n)
 {
+	char	*ret;
 	int		size;
-	char	*number;
 
 	if (n == -2147483648)
-	{
-		number = ft_strdup("-2147483648");
-		return (number);
-	}
-	if (!n)
+		return (ft_strdup("-2147483648"));
+	if (!n || n == 0)
 		return (ft_strdup("0"));
 	size = ft_size(n);
-	if (n == 0)
-	{
-		if (!(number = (char *)malloc(sizeof(*number) * 1)))
-			return (NULL);
-		number[0] = '0';
-	}
-	else
-	{
-		if (!(number = (char *)malloc(sizeof(*number) * size + 1)))
-			return (NULL);
-		number = ft_fill_char(n, number, size);
-	}
-	number[size] = '\0';
-	return (number);
+	ret = ft_strnew(size);
+	return (ft_fill_char(size, n, ret));
 }
