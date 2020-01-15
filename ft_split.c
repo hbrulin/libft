@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 18:21:21 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/01/15 11:33:32 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/15 11:34:53 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ char			**ft_null_s(char **tab)
 
 char			**ft_split(char const *s, char c)
 {
-	size_t	size;
 	size_t	str_i;
 	size_t	tab_i;
 	char	**tab;
