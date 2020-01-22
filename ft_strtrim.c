@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:02:11 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/11/13 09:57:08 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/22 18:06:32 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (len <= 0)
 		return (ft_strdup(""));
 	i = 0;
-	if (!(s2 = (char *)malloc(sizeof(*s2) * len + 1)))
-		return (NULL);
+	s2 = ft_strnew(len + 1);
 	while (len)
 	{
 		s2[i] = s1[start];

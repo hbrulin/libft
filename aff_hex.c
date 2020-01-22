@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/08 10:55:42 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/12/08 10:59:12 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/22 18:02:53 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,9 @@ char	*aff_hex(unsigned long value)
 		nb = nb / 16;
 		n++;
 	}
-	if (!(str = (char *)malloc((n + 1) * sizeof(str))))
-		return (NULL);
+	str = ft_strnew(n);
 	if (str)
 	{
-		str[n + 1] = '\0';
 		while (n >= 0)
 		{
 			nb = value % 16;

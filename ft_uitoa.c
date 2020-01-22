@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/08 11:08:49 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/12/08 11:10:52 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/22 18:07:31 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ char	*ft_uitoa(unsigned int n)
 		nb /= 10;
 		++len;
 	}
-	if (!(s = (char*)malloc(sizeof(char) * (len + 1))))
-		return (NULL);
-	s[len] = '\0';
+	s = ft_strnew(len + 1);
 	while (n > 9)
 	{
 		s[--len] = (n % 10) + 48;

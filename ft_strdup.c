@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 18:41:58 by hbrulin           #+#    #+#             */
-/*   Updated: 2019/12/08 14:32:11 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/22 18:01:39 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,9 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		s_len;
 	char	*dst;
 
-	s_len = ft_strlen(s1);
-	if (!(dst = (char *)malloc(sizeof(char) * s_len + 1)))
-		return (NULL);
+	dst = ft_strnew(ft_strlen(s1));
 	ft_strcpy(dst, s1);
-	dst[s_len] = '\0';
 	return (dst);
 }
