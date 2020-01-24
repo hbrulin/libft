@@ -6,7 +6,7 @@
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 10:49:01 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/01/24 11:53:53 by hbrulin          ###   ########.fr       */
+/*   Updated: 2020/01/24 15:30:44 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ int		ft_atoi_base(char *str, char *base)
 	int neg;
 	int len;
 
-	if (!str || check_base(base) == 0 || check_str(str, base) == 0)
+	if (!str || !base || check_base(base) == 0 || check_str(str, base) == 0)
 		return (0);
 	i = ft_whitespace(str);
 	nbr = 0;
