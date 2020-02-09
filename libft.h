@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 12:27:14 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/02/06 11:21:34 by hbrulin          ###   ########.fr       */
+/*   Created: 2020/02/06 13:24:46 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/02/09 17:49:11 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef enum		e_bool
+{
+	false,
+	true
+}					t_bool;
+
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
@@ -42,6 +48,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -86,5 +93,7 @@ size_t				ft_tablen(char **tab);
 char				**copy_tab(char **tab);
 char 				**ft_lst_to_tab(t_list *list);
 int					ft_strcmp(const char *s1, const char *s2);
+t_list				*ft_tab_to_list(t_list *lst, char **tab);
+void				ft_list_sort(t_list *lst);
 
 #endif
