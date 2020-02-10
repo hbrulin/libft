@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/06 13:24:46 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/02/10 13:25:38 by hbrulin          ###   ########.fr       */
+/*   Created: 2020/02/10 15:24:10 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/02/10 17:28:28 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void				*ft_calloc(size_t count, size_t size);
 char				*ft_strdup(const char *s1);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
+char				*ft_strnjoin(char *s1, char *s2, int n);
 char				*ft_strtrim(char const *s1, char const *set);
 char				**ft_split(char const *s, char c);
 char				*ft_itoa(int n);
@@ -97,5 +98,6 @@ t_list				*ft_tab_to_list(t_list *lst, char **tab);
 void				ft_list_sort(t_list *lst);
 void				ft_lstprint(t_list *lst);
 t_list				*ft_lst_search_n_destroy(t_list *lst, char *key);
+void				ft_tab_print(char **tab);
 
 #endif
