@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter_cmp.c                                   :+:      :+:    :+:   */
+/*   ft_tab_chr_i.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 13:29:20 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/02/13 14:10:50 by hbrulin          ###   ########.fr       */
+/*   Created: 2020/02/13 14:40:37 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/02/13 14:40:56 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstiter_cmp(t_list *lst, char *arg)
+int		ft_tab_chr_i(char **tab, char *arg)
 {
-	t_list	*next;
+	int		i;
 
-	while (lst)
+	i = 0;
+	while (tab[i])
 	{
-		next = lst->next;
-		if (!(ft_strcmp(lst->content, arg)))
-			return (0);
-		lst = next;
+		if (!(ft_strcmp(tab[i], arg)))
+			return (i);
+		i++;
 	}
-	return (1);
+	return (0);
 }
