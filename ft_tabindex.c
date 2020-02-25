@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_tabindex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 18:41:58 by hbrulin           #+#    #+#             */
-/*   Updated: 2020/01/22 18:01:39 by hbrulin          ###   ########.fr       */
+/*   Created: 2020/02/20 18:23:37 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/02/20 18:23:39 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int		ft_tabindex(const char **tab, const char *s)
 {
-	char	*dst;
+	int i;
 
-	if (!s1)
-		return (NULL);
-	dst = ft_strnew(ft_strlen(s1));
-	ft_strcpy(dst, s1);
-	return (dst);
+	i = -1;
+	while (tab && tab[++i])
+		if (s && !ft_strcmp(tab[i], s))
+			return (i);
+	return (-1);
 }

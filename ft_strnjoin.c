@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnjoin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pmouhali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hbrulin <hbrulin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 15:34:00 by pmouhali          #+#    #+#             */
-/*   Updated: 2020/02/08 18:14:26 by pmouhali         ###   ########.fr       */
+/*   Created: 2020/02/20 18:18:10 by hbrulin           #+#    #+#             */
+/*   Updated: 2020/02/20 18:23:09 by hbrulin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnjoin(char *s1, char *s2, int n)
+int		set_len(const char *s1, const char *s2, int n)
 {
-	char	*s;
-	int		i;
+	int i;
+	int len;
 
 	if (!s1)
 		i = 0;
@@ -27,7 +27,17 @@ char	*ft_strnjoin(char *s1, char *s2, int n)
 		i = 0;
 	else
 		i = ft_strlen(s2);
-	if (!(s = (char*)malloc(sizeof(char) * (n + i + 1))))
+	len = n + i + 1;
+	return (len);
+}
+
+char	*ft_strnjoin(const char *s1, const char *s2, int n)
+{
+	char	*s;
+	int		i;
+
+	i = set_len(s1, s2, n);
+	if (!(s = (char*)malloc(sizeof(char) * i)))
 		return (s);
 	i = 0;
 	while (i < n)
@@ -44,5 +54,4 @@ char	*ft_strnjoin(char *s1, char *s2, int n)
 	}
 	s[i] = 0;
 	return (s);
-
 }
