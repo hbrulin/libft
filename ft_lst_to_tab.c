@@ -18,7 +18,9 @@ char	**ft_lst_to_tab(t_list *list)
 	t_list	*tmp;
 	int		i;
 
-	if (!(ret = (char**)malloc(sizeof(char *) * ft_lstsize(list) + 1)))
+	ret = NULL;
+	tmp = NULL;
+	if (!(ret = malloc((ft_lstsize(list) + 1) * sizeof(*ret))))
 		return (NULL);
 	i = 0;
 	tmp = list;
