@@ -23,7 +23,7 @@ int		ft_whitespace(char *str)
 	return (i);
 }
 
-int		ft_neg(int i, const char *str)
+int		ft_neg(int i, char *str)
 {
 	if (str[i] == '-')
 		return (-1);
@@ -35,20 +35,20 @@ int		check_str(char *str, char *base)
 {
 	int		i;
 	int		j;
-	size_t	not;
+	size_t	no;
 
 	i = 0;
 	while (str[i])
 	{
 		j = 0;
-		not = 0;
+		no = 0;
 		while (base[j])
 		{
 			if (base[j] != str[i])
-				not++;
+				no++;
 			j++;
 		}
-		if (not == ft_strlen(base))
+		if (no == ft_strlen(base))
 			return (0);
 		i++;
 	}
@@ -59,7 +59,6 @@ int		check_base(char *base)
 {
 	int i;
 	int j;
-
 	if (ft_strlen(base) == 1)
 		return (0);
 	i = 0;
@@ -79,14 +78,29 @@ int		check_base(char *base)
 	return (1);
 }
 
-int		ft_atoi_base(char *str, char *base)
+int		ft_check(char c, char *base)
 {
-	int nbr;
+	int	i;
+
+	i = 0;
+	while (base[i] != '\0')
+	{
+		if (base[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+
+long int		ft_atoi_base(char *str, char *base)
+{
+	long int nbr;
 	int i;
-	int neg;
+	long int neg;
 	int len;
 
-	if (!str || !base || check_base(base) == 0 || check_str(str, base) == 0)
+	if (!str || !base || check_base(base) == 0 || check_str(str, base) == 1)
 		return (0);
 	i = ft_whitespace(str);
 	nbr = 0;
@@ -99,7 +113,7 @@ int		ft_atoi_base(char *str, char *base)
 	}
 	while (str[i] >= base[0] && str[i] <= base[len - 1])
 	{
-		nbr = nbr * len + str[i] - base[0];
+		nbr = nbr * len + ft_check(str[i], base);
 		i++;
 	}
 	return (nbr * neg);
