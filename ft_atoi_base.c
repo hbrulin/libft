@@ -31,30 +31,6 @@ int		ft_neg(int i, char *str)
 		return (1);
 }
 
-int		check_str(char *str, char *base)
-{
-	int		i;
-	int		j;
-	size_t	no;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 0;
-		no = 0;
-		while (base[j])
-		{
-			if (base[j] != str[i])
-				no++;
-			j++;
-		}
-		if (no == ft_strlen(base))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
 int		check_base(char *base)
 {
 	int i;
@@ -100,7 +76,7 @@ long int		ft_atoi_base(char *str, char *base)
 	long int neg;
 	int len;
 
-	if (!str || !base || check_base(base) == 0 || check_str(str, base) == 1)
+	if (!str || !base || check_base(base) == 0)
 		return (0);
 	i = ft_whitespace(str);
 	nbr = 0;
